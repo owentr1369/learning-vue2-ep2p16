@@ -1,9 +1,10 @@
 <template>
-  <div>
-    <div class="vuong" :style="{ backgroundColor: color }"></div>
-    <div class="vuong" :style="customStyle"></div>
-    <div class="vuong"></div>
-    <div class="vuong"></div>
+  <div id="app">
+    <div class="vuong" :style="{ backgroundColor: color }" />
+    <div class="vuong" :style="customStyle" />
+
+    <div class="vuong" v-bind:style="[customStyle]" />
+    <div class="vuong" />
     <hr />
     <input type="text" v-model="color" />
     <input type="text" v-model="width" />
