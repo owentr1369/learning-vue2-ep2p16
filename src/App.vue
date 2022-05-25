@@ -1,19 +1,13 @@
 <template>
   <div>
-    <div
-      class="vuong"
-      @click="quanlido = !quanlydo"
-      :class="{ do: quanlido }"
-    ></div>
-    <div
-      class="vuong"
-      @click="quanlido = !quanlydo"
-      :class="{ do: quanlido }"
-    ></div>
-    <div class="vuong" :class="[color, { do: quanlido }]"></div>
+    <div class="vuong" :style="{ backgroundColor: color }"></div>
+    <div class="vuong" :style="customStyle"></div>
+    <div class="vuong"></div>
     <div class="vuong"></div>
     <hr />
     <input type="text" v-model="color" />
+    <input type="text" v-model="width" />
+    <input type="text" v-model="height" />
   </div>
 </template>
 
@@ -24,16 +18,18 @@ export default {
   name: "App",
   data() {
     return {
-      quanlido: false,
-      color: "xanhla",
+      color: "gray",
+      width: 100,
+      height: 100,
     };
   },
   methods: {},
   computed: {
-    divClasses: function () {
+    customStyle: function () {
       return {
-        do: this.quanlido,
-        xanhduong: !this.quanlido,
+        backgroundColor: this.color,
+        width: this.width + "px",
+        height: this.height + "px",
       };
     },
   },
@@ -55,14 +51,5 @@ export default {
   background-color: gray;
   display: inline-block;
   margin: 10px;
-}
-.do {
-  background-color: red;
-}
-.xanhduong {
-  background-color: blue;
-}
-.xanhla {
-  background-color: green;
 }
 </style>
