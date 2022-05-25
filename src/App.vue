@@ -10,16 +10,10 @@
       @click="quanlido = !quanlydo"
       :class="{ do: quanlido }"
     ></div>
-    <div
-      class="vuong"
-      @click="quanlido = !quanlydo"
-      :class="{ do: quanlido }"
-    ></div>
-    <div
-      class="vuong"
-      @click="quanlido = !quanlydo"
-      :class="{ do: quanlido }"
-    ></div>
+    <div class="vuong" :class="[color, { do: quanlido }]"></div>
+    <div class="vuong"></div>
+    <hr />
+    <input type="text" v-model="color" />
   </div>
 </template>
 
@@ -31,9 +25,18 @@ export default {
   data() {
     return {
       quanlido: false,
+      color: "xanhla",
     };
   },
   methods: {},
+  computed: {
+    divClasses: function () {
+      return {
+        do: this.quanlido,
+        xanhduong: !this.quanlido,
+      };
+    },
+  },
 };
 </script>
 
