@@ -1,8 +1,25 @@
 <template>
   <div>
-    <p>App</p>
-    <a v-bind:href="linkVal"> Link </a>
-    <button @click="changeLink">Click to change link</button>
+    <div
+      class="vuong"
+      @click="quanlido = !quanlydo"
+      :class="{ do: quanlido }"
+    ></div>
+    <div
+      class="vuong"
+      @click="quanlido = !quanlydo"
+      :class="{ do: quanlido }"
+    ></div>
+    <div
+      class="vuong"
+      @click="quanlido = !quanlydo"
+      :class="{ do: quanlido }"
+    ></div>
+    <div
+      class="vuong"
+      @click="quanlido = !quanlydo"
+      :class="{ do: quanlido }"
+    ></div>
   </div>
 </template>
 
@@ -13,14 +30,10 @@ export default {
   name: "App",
   data() {
     return {
-      linkVal: "https://www.google.com",
+      quanlido: false,
     };
   },
-  methods: {
-    changeLink: function () {
-      this.linkVal = "https://www.facebook.com";
-    },
-  },
+  methods: {},
 };
 </script>
 
@@ -32,5 +45,21 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.vuong {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  display: inline-block;
+  margin: 10px;
+}
+.do {
+  background-color: red;
+}
+.xanhduong {
+  background-color: blue;
+}
+.xanhla {
+  background-color: green;
 }
 </style>
